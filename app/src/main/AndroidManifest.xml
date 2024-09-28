@@ -12,14 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetGram"
         tools:targetApi="31">
+
+        <!-- SplashActivity là activity khởi động đầu tiên -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- MainActivity không cần intent-filter LAUNCHER -->
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <!-- MainActivity sẽ được gọi từ SplashActivity và không cần intent-filter -->
         </activity>
     </application>
 
